@@ -13,8 +13,8 @@ import static org.bayesianfreaks.nlp.tokenizer.example.SingleBraceStateMachine.S
 
 public class SingleBraceTokenizer implements Tokenizer {
 
-    private static Parsers.Parser a = Parsers.character('a').many();
-    private static Parsers.Parser b = Parsers.character('b').many();
+    private static Parsers.Parser a = Parsers.character('a').many().orElse(Parsers.br);
+    private static Parsers.Parser b = Parsers.character('b').many().orElse(Parsers.br);
     private static Parsers.Parser openBrace = Parsers.character('(');
     private static Parsers.Parser closeBrace = Parsers.character(')');
     private static Parsers.Parser outerParser = a.orElse(openBrace);

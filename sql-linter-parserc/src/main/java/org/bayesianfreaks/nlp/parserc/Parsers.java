@@ -24,7 +24,7 @@ public class Parsers {
             .orElse(lf)
             .orElse(cr)
             .many()
-            .withToken(Token.of(" "));
+            .withToken(Token.ofBreak());
 
     public static Parser examine(final Predicate<Character> predicate) {
         return source -> {

@@ -15,7 +15,7 @@ class SingleBraceTokenizerTest {
 
     @Test
     void read() {
-        final Source source = Source.of("aa(bbb)aaaa");
+        final Source source = Source.of("aa    aa(bbb bbb)aaaa");
         final SingleBraceStateMachine m = SingleBraceStateMachine.ofInitialState();
         final SingleBraceTokenizer t = new SingleBraceTokenizer();
 
@@ -35,13 +35,15 @@ class SingleBraceTokenizerTest {
     void tokenize() {
         final List<Token> expected = Arrays.asList(
                 Token.of("aa"),
+                Token.of("aa"),
                 Token.of("("),
+                Token.of("bbb"),
                 Token.of("bbb"),
                 Token.of(")"),
                 Token.of("aaaa")
         );
 
-        final Source source = Source.of("aa(bbb)aaaa");
+        final Source source = Source.of("aa    aa(bbb bbb)aaaa");
         final SingleBraceStateMachine m = SingleBraceStateMachine.ofInitialState();
         final SingleBraceTokenizer t = new SingleBraceTokenizer();
 

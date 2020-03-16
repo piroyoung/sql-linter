@@ -14,7 +14,7 @@ public interface Tokenizer {
         final List<Token> tokens = new ArrayList<>();
         while (true) {
             final Optional<Token> result = this.read(m.getState(), source);
-            result.ifPresent(tokens::add);
+            result.filter(Token::isNotBreak).ifPresent(tokens::add);
             result.ifPresent(m::receive);
             if (result.isEmpty()) {
                 break;
