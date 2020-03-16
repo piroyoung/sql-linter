@@ -2,8 +2,7 @@ package org.bayesianfreaks.nlp.parserc;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.*;
 
 class TokenTest {
 
@@ -15,5 +14,41 @@ class TokenTest {
         assertEquals(t1, t2);
         assertNotSame(t1, t3);
 
+    }
+
+    @Test
+    void of() {
+        final var token = Token.of("a");
+        assertEquals("a", token.getValue());
+    }
+
+    @Test
+    void ofChar() {
+        final var token = Token.ofChar('a');
+        assertEquals("a", token.getValue());
+    }
+
+    @Test
+    void ofBreak() {
+        final var token = Token.ofBreak();
+        assertTrue(token.isBreak());
+    }
+
+    @Test
+    void getValue() {
+        final var token = Token.of("a");
+        assertEquals("a", token.getValue());
+    }
+
+    @Test
+    void isBreak() {
+        final var token = Token.ofBreak();
+        assertTrue(token.isBreak());
+    }
+
+    @Test
+    void isNotBreak() {
+        final var token = Token.ofBreak();
+        assertFalse(token.isNotBreak());
     }
 }
