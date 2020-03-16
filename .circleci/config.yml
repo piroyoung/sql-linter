@@ -11,10 +11,7 @@ jobs:
       - checkout
       - run:
           name: test
-          command: mvn test
-      - run:
-          name: cobertura
-          command: mvn cobertura:cobertura
+          command: mvn clean test
       - run:
           name: codecov
           command: bash <(curl -s https://codecov.io/bash)
