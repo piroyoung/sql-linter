@@ -12,10 +12,9 @@ jobs:
       - run:
           name: test
           command: mvn test
-
-      - codecov/upload:
-          file: ./coverage.out
-
+      - run:
+          name: cobertura
+          command: mvn cobertura:cobertura
       - run:
           name: codecov
           command: bash <(curl -s https://codecov.io/bash)
