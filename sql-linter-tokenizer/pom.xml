@@ -11,13 +11,4 @@
 
     <artifactId>sql-linter-tokenizer</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.bayesianfreaks</groupId>
-            <artifactId>sql-linter-parserc</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
-
-
 </project>
