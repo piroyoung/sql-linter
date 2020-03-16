@@ -13,8 +13,8 @@ jobs:
           name: test
           command: mvn clean test
 
-      - store_artifacts:
-          path: target
+      - codecov/upload:
+          file: ./coverage.out
 
       - run:
           name: codecov
