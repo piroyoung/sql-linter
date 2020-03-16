@@ -12,6 +12,9 @@ jobs:
       - run:
           name: test
           command: mvn clean test
+      - run:
+          name: codecov
+          command: bash <(curl -s https://codecov.io/bash)
 
       - store_artifacts:
           path: target
