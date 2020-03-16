@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: test
-          command: mvn clean test
+          command: mvn test
 
       - codecov/upload:
           file: ./coverage.out
