@@ -16,13 +16,6 @@ jobs:
           name: codecov
           command: bash <(curl -s https://codecov.io/bash)
 
-      - store_artifacts:
-          path: target
-
-      - run:
-          name: codecov
-          command: bash <(curl -s https://codecov.io/bash)
-
 workflows:
   maven_test:
     jobs:
