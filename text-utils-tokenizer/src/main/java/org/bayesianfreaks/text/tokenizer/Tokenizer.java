@@ -15,7 +15,7 @@ public interface Tokenizer {
         while (true) {
             final Optional<Token> result = this.read(m.getState(), source);
             result.filter(Token::isNotBreak).ifPresent(tokens::add);
-            result.ifPresent(m::receive);
+            result.filter(Token::isNotBreak).ifPresent(m::receive);
             if (result.isEmpty()) {
                 break;
             }

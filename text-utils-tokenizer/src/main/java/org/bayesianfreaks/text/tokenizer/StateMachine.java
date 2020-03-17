@@ -11,6 +11,5 @@ public interface StateMachine {
     void initialize();
 
     interface State {
-        public State getState();
     }
 }

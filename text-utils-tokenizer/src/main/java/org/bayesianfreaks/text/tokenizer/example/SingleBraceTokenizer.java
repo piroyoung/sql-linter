@@ -8,9 +8,6 @@ import org.bayesianfreaks.text.tokenizer.Tokenizer;
 
 import java.util.Optional;
 
-import static org.bayesianfreaks.text.tokenizer.example.SingleBraceStateMachine.SingleBraceState.Inner;
-import static org.bayesianfreaks.text.tokenizer.example.SingleBraceStateMachine.SingleBraceState.Outer;
-
 public class SingleBraceTokenizer implements Tokenizer {
 
     private static Parsers.Parser a = Parsers.character('a').many().orElse(Parsers.br);
@@ -22,12 +19,15 @@ public class SingleBraceTokenizer implements Tokenizer {
 
     @Override
     public Optional<Token> read(StateMachine.State state, Source source) {
-        if (state.equals(Outer)) {
-            return outerParser.parse(source);
-        } else if (state.equals(Inner)) {
-            return innerParser.parse(source);
+        final SingleBraceStateMachine.SingleBraceState s = (SingleBraceStateMachine.SingleBraceState) state;
+        switch (s) {
+            case Inner:
+                return innerParser.parse(source);
+            case Outer:
+                return outerParser.parse(source);
+            default:
+                return Optional.empty();
         }
-        return Optional.empty();
     }
 
 }
