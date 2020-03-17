@@ -65,7 +65,7 @@ public class Parsers {
         return source -> {
             final StringBuilder sb = new StringBuilder();
             final int initialPos = source.getPos();
-            for (Parser parser : parsers) {
+            for (final Parser parser : parsers) {
                 Optional<Token> result = parser.parse(source);
                 if (result.isPresent()) {
                     result.ifPresent(token -> sb.append(token.toString()));
