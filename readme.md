@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/piroyoung/text-utils/branch/master/graph/badge.svg)](https://codecov.io/gh/piroyoung/sql-linter)
+[![codecov](https://codecov.io/gh/piroyoung/sql-linter/branch/master/graph/badge.svg)](https://codecov.io/gh/piroyoung/sql-linter)
 [![CircleCI](https://circleci.com/gh/piroyoung/text-utils.svg?style=svg)](https://circleci.com/gh/piroyoung/text-utils)
 
 # text-utils
