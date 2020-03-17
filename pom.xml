@@ -12,6 +12,7 @@
         <module>text-utils-parserc</module>
         <module>text-utils-core</module>
         <module>text-utils-tokenizer</module>
+        <module>text-utils-sql</module>
     </modules>
 
     <properties>

@@ -12,6 +12,7 @@ public class Parsers {
     public static final Parser upper = examine(Character::isUpperCase);
     public static final Parser digit = examine(Character::isDigit);
     public static final Parser whitespace = character(' ');
+    public static final Parser underScore = character('_');
     public static final Parser comma = character(',');
     public static final Parser singleQuote = character('\'');
     public static final Parser doubleQuote = character('"');
