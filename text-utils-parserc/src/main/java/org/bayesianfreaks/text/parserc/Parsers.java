@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.function.Predicate;
 
 public class Parsers {
+    public static final Parser any = examine(s -> true);
     public static final Parser letter = examine(Character::isLetter);
     public static final Parser lower = examine(Character::isLowerCase);
     public static final Parser upper = examine(Character::isUpperCase);
