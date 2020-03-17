@@ -18,4 +18,7 @@ public class SqlStateMachine implements StateMachine {
     public void initialize() {
 
     }
+
+    enum SqlStatus implements State {
+    }
 }
