@@ -37,11 +37,6 @@ public class SingleBraceStateMachine implements StateMachine {
 
     public enum SingleBraceState implements State {
         Inner,
-        Outer;
-
-        @Override
-        public State getState() {
-            return this;
-        }
+        Outer
     }
 }
